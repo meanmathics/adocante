@@ -32,12 +32,12 @@ O estudo seguiu o seguinte pipeline para a modelagem molecular:
 
 ### Energias Calculadas (Single Point DFT)
 
-- *Sacarose ($C_{12}H_{22}O_{11}$):* **-1215.9255 Ha**
+- *Sacarose* ($C_{12}H_{22}O_{11}$): **-1215.9255 Ha**
 
 ![sucrose](https://raw.githubusercontent.com/meanmathics/adocante/refs/heads/main/img/Sucrose.png)
 _(Figura 1: Estrutura 2D da Sacarose - Fonte: PubChem)._
     
-- *Sucralose ($C_{12}H_{19}Cl_3O_8$):* **-2324.6207 Ha**
+- *Sucralose* ($C_{12}H_{19}Cl_3O_8$): **-2324.6207 Ha**
 
 ![sacralose](https://raw.githubusercontent.com/meanmathics/adocante/refs/heads/main/img/Sucralose.png)
 _(Figura 2: Estrutura 2D da Sucralose. Note os átomos de Cloro nas posições 1', 4 e 6' - Fonte: PubChem)._
