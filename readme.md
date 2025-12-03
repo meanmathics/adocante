@@ -8,9 +8,7 @@ A sucralose é um adoçante artificial (muito utilizado) derivado da sacarose qu
 
 ## Fundamentação Teórica
 
-A premissa central apresentada — de que "A Sucralose é feita trocando grupos Hidroxila (-OH) da Sacarose por Cloro (-Cl)" — constitui a base fundamental para a compreensão não apenas das propriedades organolépticas deste adoçante, mas também de todo o seu perfil toxicológico, metabólico e ambiental. Esta modificação estrutural, aparentemente simples, onde três átomos de cloro substituem três grupos hidroxila na molécula de açúcar natural, transforma um nutriente calórico e biodegradável numa molécula organoclorada sintética de elevada estabilidade e potência adoçante extraordinária.   
-Descoberta em 1976 através de uma colaboração entre a Tate & Lyle e o Queen Elizabeth College, a sucralose (triglicerosacarose) emergiu como o edulcorante de alta intensidade dominante globalmente, celebrado pela sua estabilidade de pH e perfil de sabor superior em comparação com antecessores como a sacarina e o aspartame. A sua estrutura química, 1,6-dicloro-1,6-dideoxi-β-D-fructofuranosil-4-cloro-4-deoxi-α-D-galactopiranosídeo, confere-lhe uma doçura estimada entre 400 a 700 vezes superior à da sacarose, dependendo da matriz em que é dissolvida [4].
-A sucralose é sintetizada pela substituição seletiva de três grupos hidroxila (-OH) por átomos de Cloro (-Cl), acompanhada de uma inversão de configuração no Carbono-4. Um processo muito utilizado no design de novas moléculas, chamado **Bioisosterismo**.
+Descoberta em 1976 através de uma colaboração entre a Tate & Lyle e o Queen Elizabeth College, a sucralose (triglicerosacarose) emergiu como o edulcorante de alta intensidade dominante globalmente, celebrado pela sua estabilidade de pH e perfil de sabor superior em comparação com antecessores como a sacarina e o aspartame. A sua estrutura química, 1,6-dicloro-1,6-dideoxi-β-D-fructofuranosil-4-cloro-4-deoxi-α-D-galactopiranosídeo, confere-lhe uma doçura estimada entre 400 a 700 vezes superior à da sacarose, dependendo da matriz em que é dissolvida [4]. A sucralose é sintetizada pela substituição seletiva de três grupos hidroxila (-OH) por átomos de Cloro (-Cl), acompanhada de uma inversão de configuração no Carbono-4. Um processo muito utilizado no design de novas moléculas, chamado **Bioisosterismo**.
 - **Hipótese:** O Cloro atua como um bioisóstero não-clássico. Ele mimetiza o volume estérico da hidroxila (mantendo o sabor doce), mas altera drasticamente a distribuição eletrônica (impedindo a digestão por ser sintético).
 
     
@@ -46,7 +44,7 @@ _(Figura 2: Sacralose PubChem)._
 ### Análise Visual
 
 ![comparaçao](https://raw.githubusercontent.com/meanmathics/adocante/refs/heads/main/img/compara%C3%A7ao.png)
-_(Fig 1: Comparação de Potencial Eletrostático (MEP) entre Sacarose e Sucralose, renderizada no UCSF ChimeraX)._
+_(Fig 1: Comparação de Potencial Eletrostático (MEP) entre Sacarose (na esquerda) e Sucralose (na direita), renderizada no UCSF ChimeraX)._
 
 As simulações revelaram diferenças críticas na superfície molecular:
 
