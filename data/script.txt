@@ -1,0 +1,13 @@
+(open files density and esp from one molecule, one at time)
+
+comands:
+
+hide #1,2 models
+volume #1 level 0.03
+color electrostatic #1 map #2 palette -0.03,red:0,white:0.03,blue
+
+lighting soft
+light shadow true
+material shiny
+material dull
+transparency #1 50
