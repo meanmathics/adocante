@@ -1,6 +1,6 @@
 # Estudo sobre Edulcorantes / Doces Sintéticos (Bioisosterismo Computacional)
 
-**Uma investigação sobre os mecanismos moleculares da Sucralose.**
+Uma investigação sobre os mecanismos moleculares da Sucralose.
 
 ## Resumo
 
@@ -12,10 +12,10 @@ Descoberta em 1976, a sucralose (triclorosacarose) consolidou-se como líder glo
 
 Este processo exemplifica o **Bioisosterismo Não-Clássico**, uma estratégia crucial no design de fármacos e aditivos alimentares.
 
-- **Hipótese:** O átomo de Cloro atua como um bioisóstero da Hidroxila. Ele mimetiza o volume estérico necessário para ativar os receptores de sabor doce (T1R2/T1R3), mas altera drasticamente a densidade eletrônica local, impedindo o reconhecimento pelas enzimas digestivas (glicosidases).
+- **Hipótese:** O átomo de Cloro atua como um bioisóstero da Hidroxíla. Ele mimetiza o *volume estérico necessário* para ativar os receptores de sabor doce (T1R2/T1R3) de modo mais intenso devido a ser mais apolar, mas altera drasticamente a densidade eletrônica local, impedindo o reconhecimento pelas enzimas digestivas (glicosidases).
 
     
-## Metodologia (Workflow)
+## Metodologia
 
 O estudo seguiu o seguinte pipeline para a modelagem molecular:
 
@@ -28,16 +28,16 @@ O estudo seguiu o seguinte pipeline para a modelagem molecular:
 4. **Visualização:** Renderização volumétrica com _Ambient Occlusion_ no **UCSF ChimeraX 1.10.1**.
 
 
-## Resultados e Discussão
+## Resultados
 
 ### Energias Calculadas (Single Point DFT)
 
-- **Sacarose ($C_{12}H_{22}O_{11}$):** -1215.9255 Ha
+- *Sacarose ($C_{12}H_{22}O_{11}$):* **-1215.9255 Ha**
 
 ![sucrose](https://raw.githubusercontent.com/meanmathics/adocante/refs/heads/main/img/Sucrose.png)
 _(Figura 1: Estrutura 2D da Sacarose - Fonte: PubChem)._
     
-- **Sucralose ($C_{12}H_{19}Cl_3O_8$):** -2324.6207 Ha
+- *Sucralose ($C_{12}H_{19}Cl_3O_8$):* **-2324.6207 Ha**
 
 ![sacralose](https://raw.githubusercontent.com/meanmathics/adocante/refs/heads/main/img/Sucralose.png)
 _(Figura 2: Estrutura 2D da Sucralose. Note os átomos de Cloro nas posições 1', 4 e 6' - Fonte: PubChem)._
