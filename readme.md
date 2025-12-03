@@ -33,19 +33,22 @@ O estudo seguiu o seguinte pipeline para a modelagem molecular:
 
 - **Sacarose ($C_{12}H_{22}O_{11}$):** -1215.9255 Ha
 
-_fig estrutura da sacarose
+![sucrose](https://raw.githubusercontent.com/meanmathics/adocante/refs/heads/main/img/Sucrose.png)
+_(Figura 1: Sacarose ou Sucrose PubChem)._
     
 - **Sucralose ($C_{12}H_{19}Cl_3O_8$):** -2324.6207 Ha
 
-_fig estrutura da sucralose
+![sacralose](https://raw.githubusercontent.com/meanmathics/adocante/refs/heads/main/img/Sucralose.png)
+_(Figura 2: Sacralose PubChem)._
 
 (A grande diferença energética reflete a contribuição dos elétrons dos átomos pesados de Cloro).
     
 ### Análise Visual
 
-As simulações revelaram diferenças críticas na superfície molecular:
-
+![comparaçao](https://raw.githubusercontent.com/meanmathics/adocante/refs/heads/main/img/compara%C3%A7ao.png)
 _(Fig 1: Comparação de Potencial Eletrostático (MEP) entre Sacarose e Sucralose, renderizada no UCSF ChimeraX)._
+
+As simulações revelaram diferenças críticas na superfície molecular:
 
 - **Sacarose (Natural):** Apresenta dipolos fortes ou polaridade (regiões Azul/Vermelho intensas), facilitando a solvatação e o acoplamento com enzimas hidrolíticas (Invertase).
     
