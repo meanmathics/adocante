@@ -1,24 +1,27 @@
-# Estudo sobre Doces Sintéticos (Bioisosterismo Computacional)
+# Estudo sobre Edulcorantes / Doces Sintéticos (Bioisosterismo Computacional)
 
 **Uma investigação sobre os mecanismos moleculares da Sucralose.**
 
 ## Resumo
 
-A sucralose é um adoçante artificial (muito utilizado) derivado da sacarose que é aproximadamente **600x mais doce**, porém possui **zero calorias**. Este projeto utiliza Química Computacional (DFT) para investigar como uma simples substituição atômica (Hidroxila $\to$ Cloro) altera fundamentalmente o reconhecimento molecular e o metabolismo desta substância no corpo humano.
+A sucralose é um edulcorante de alta intensidade (muito utilizado) derivado da sacarose, sendo aproximadamente **600x mais doce**, porém isenta de calorias. Este projeto utiliza Química Computacional (DFT e Modelagem Molecular) para investigar como a substituição estratégica de grupos funcionais (Hidroxila $\to$ Cloro) altera o reconhecimento molecular e bloqueia a metabolização desta substância pelo organismo humano.
 
 ## Fundamentação Teórica
 
-Descoberta em 1976 através de uma colaboração entre a Tate & Lyle e o Queen Elizabeth College, a sucralose (triglicerosacarose) emergiu como o edulcorante de alta intensidade dominante globalmente, celebrado pela sua estabilidade de pH e perfil de sabor superior em comparação com antecessores como a sacarina e o aspartame. A sua estrutura química, 1,6-dicloro-1,6-dideoxi-β-D-fructofuranosil-4-cloro-4-deoxi-α-D-galactopiranosídeo, confere-lhe uma doçura estimada entre 400 a 700 vezes superior à da sacarose, dependendo da matriz em que é dissolvida [4]. A sucralose é sintetizada pela substituição seletiva de três grupos hidroxila (-OH) por átomos de Cloro (-Cl), acompanhada de uma inversão de configuração no Carbono-4. Um processo muito utilizado no design de novas moléculas, chamado **Bioisosterismo**.
-- **Hipótese:** O Cloro atua como um bioisóstero não-clássico. Ele mimetiza o volume estérico da hidroxila (mantendo o sabor doce), mas altera drasticamente a distribuição eletrônica (impedindo a digestão por ser sintético).
+Descoberta em 1976, a sucralose (triclorosacarose) consolidou-se como líder global entre adoçantes pela sua estabilidade de pH e sabor. Quimicamente definida como **4,1',6'-tricloro-4,1',6'-trideoxigalactosacarose** (ou 1',6'-Dicloro-1',6'-dideoxi-β-D-fructofuranosil-4-cloro-4-deoxi-α-D-galactopiranosídeo), sua síntese envolve a cloração seletiva de três posições específicas da sacarose, acompanhada de uma inversão de configuração no Carbono-4 [4].
+
+Este processo exemplifica o **Bioisosterismo Não-Clássico**, uma estratégia crucial no design de fármacos e aditivos alimentares.
+
+- **Hipótese:** O átomo de Cloro atua como um bioisóstero da Hidroxila. Ele mimetiza o volume estérico necessário para ativar os receptores de sabor doce (T1R2/T1R3), mas altera drasticamente a densidade eletrônica local, impedindo o reconhecimento pelas enzimas digestivas (glicosidases).
 
     
 ## Metodologia (Workflow)
 
 O estudo seguiu o seguinte pipeline para a modelagem molecular:
 
-1. **RDKit**: Para a geração de conformeros 3D iniciais via MMFF94, a partir dos dados do **PubChem**.
+1. **RDKit**: Para a geração de conformeros 3D iniciais via MMFF94, a partir dos SMILES do *PubChem*.
     
-2. **Psi4 1.4**: Cálculos de Energia e Função de Onda utilizando Teoria do Funcional da Densidade com uma base simples (**DFT B3LYP/3-21G**) para um resultado rápido, conforme o propósito do estudo de uma aproximação visual.
+2. **Psi4 1.4**: Cálculos de Energia e Função de Onda utilizando Teoria do Funcional da Densidade com uma base simples (**DFT B3LYP/3-21G**) para um resultado rápido, conforme o propósito do estudo de uma simples aproximação visual.
     
 3. **Análise de Superfície**: Mapeamento do Potencial Eletrostático (MEP) sobre a densidade eletrônica (Isovalue 0.002 a.u.).
     
@@ -32,42 +35,32 @@ O estudo seguiu o seguinte pipeline para a modelagem molecular:
 - **Sacarose ($C_{12}H_{22}O_{11}$):** -1215.9255 Ha
 
 ![sucrose](https://raw.githubusercontent.com/meanmathics/adocante/refs/heads/main/img/Sucrose.png)
-_(Figura 1: Sacarose ou Sucrose PubChem)._
+_(Figura 1: Estrutura 2D da Sacarose - Fonte: PubChem)._
     
 - **Sucralose ($C_{12}H_{19}Cl_3O_8$):** -2324.6207 Ha
 
 ![sacralose](https://raw.githubusercontent.com/meanmathics/adocante/refs/heads/main/img/Sucralose.png)
-_(Figura 2: Sacralose PubChem)._
+_(Figura 2: Estrutura 2D da Sucralose. Note os átomos de Cloro nas posições 1', 4 e 6' - Fonte: PubChem)._
 
 (A grande diferença energética reflete a contribuição dos elétrons dos átomos pesados de Cloro).
     
 ### Análise Visual
 
 ![comparaçao](https://raw.githubusercontent.com/meanmathics/adocante/refs/heads/main/img/compara%C3%A7ao.png)
-_(Fig 1: Comparação de Potencial Eletrostático (MEP) entre Sacarose (na esquerda) e Sucralose (na direita), renderizada no UCSF ChimeraX)._
-
-As simulações revelaram diferenças críticas na superfície molecular:
-
-- **Sacarose (Natural):** Apresenta dipolos fortes ou polaridade (regiões Azul/Vermelho intensas), facilitando a solvatação e o acoplamento com enzimas hidrolíticas (Invertase).
-    
-- **Sucralose (Sintética):** A substituição por Cloro (átomos maiores!) remove os sítios doadores de ligação de hidrogênio (regiões azuis). Isso cria uma blindagem hidrofóbica e eletrônica local que impede o ataque enzimático, resultando na não-metabolização na digestão (0 kcal).
-Esta alteração é crítica por várias razões físico-químicas:
-1. Inversão de Configuração: A inversão do grupo hidroxila no carbono-4 transforma a porção de glicose numa estrutura de 4-cloro-4-deoxigalactose. Esta mudança estereoquímica é fundamental porque as enzimas glicosídicas do trato digestivo humano, como a sacarase e a invertase, são altamente específicas para a conformação da sacarose. A alteração impede o reconhecimento enzimático, tornando a molécula resistente à hidrólise digestiva e, teoricamente, não calórica.   
-2. Lipofilicidade e Eletronegatividade: O cloro é significativamente mais lipofílico e eletronegativo do que o grupo hidroxila. A substituição aumenta a hidrofobicidade da molécula em regiões chave. Enquanto os grupos hidroxila funcionam como doadores e aceitadores de ligações de hidrogênio, os átomos de cloro atuam principalmente como sítios hidrofóbicos densos em elétrons. Esta alteração nas propriedades eletrônicas e estéricas é o que permite à sucralose interagir com o receptor de sabor doce com uma afinidade centenas de vezes superior à do seu análogo natural.
+_(Fig 3: Comparação de Potencial Eletrostático (MEP) renderizada no ChimeraX. Esquerda: Sacarose; Direita: Sucralose. Superfícies coloridas por potencial: Azul = Positivo/Doador H; Vermelho = Negativo/Aceitador H)._
+A análise sugere dois fatores determinantes para as propriedades da Sucralose:
+1.  **Inversão de Configuração (C4):** A inversão transforma a subunidade de glicose em um análogo de **galactose**. Enzimas humanas são estereoespecíficas; a mudança na orientação espacial impede o "encaixe" correto para a hidrólise.
+2.  **Lipofilicidade e Eletronegatividade:** O Cloro é um halogênio eletronegativo, mas não forma pontes de hidrogênio fortes como a hidroxila. A visualização mostra que o Cloro "apaga" a carga positiva (azul) necessária para a catálise enzimática. A molécula consegue ativar o receptor de sabor (que é mais tolerante e focado em forma/volume), mas "escorrega" pelas enzimas digestivas, resultando em **zero calorias** metabolizáveis.
 
 ## Conclusão
 
-A afirmação de que a sucralose é derivada da sacarose pela troca de grupos hidroxila por cloro é a chave para entender tanto o seu sucesso comercial quanto os seus riscos biológicos. Essa modificação não cria apenas um adoçante; cria uma molécula nova com propriedades fundamentalmente distintas da sua precursora natural, especialmente as químicas, em relação a versão natural (açucar) como o fato de ser centenas de vezes *mais doce*.
+A transformação da sacarose em sucralose é um caso clássico de engenharia molecular. A modificação não cria apenas um adoçante mais potente; ela gera uma nova entidade química onde a **forma** (mantida) engana o paladar, mas a **distribuição eletrônica** (alterada pelo Cloro) engana o metabolismo. Este estudo valida visualmente o conceito de bioisosterismo aplicado à indústria alimentícia.
 
 ## Referências Bibliográficas
 
-1. PubChem - Sucralose. Disponível em: https://pubchem.ncbi.nlm.nih.gov/compound/Sucralose. Acessado em 12/2025.
-2. PubChem - Sacarose. Disponível em: https://pubchem.ncbi.nlm.nih.gov/compound/5988. Acessado em 12/2025
-3. FDA - Sweetness Intensity of Sweeteners Compared to Table Sugar. Disponivel em: https://www.fda.gov/media/168345/download. Acessado em 12/2025.
-4. Aguayo-Guerrero JA, Méndez-García LA, Solleiro-Villavicencio H, Viurcos-Sanabria R, Escobedo G. Sucralose: From Sweet Success to Metabolic Controversies-Unraveling the Global Health Implications of a Pervasive Non-Caloric Artificial Sweetener. Life (Basel). 2024 Feb 29;14(3):323. doi: 10.3390/life14030323. PMID: 38541649; PMCID: PMC10971371.
-5. UCSF ChimeraX: Tools for structure building and analysis. Meng EC, Goddard TD, Pettersen EF, Couch GS, Pearson ZJ, Morris JH, Ferrin TE. Protein Sci. 2023 Nov;32(11):e4792.
-6. Smith, D. G. A., et al. (2020). Psi4 1.4: Open-Source Software. J. Chem. Phys.
-
-
-
-
+1.  **PubChem** - Sucralose (CID 56843336). Disponível em: https://pubchem.ncbi.nlm.nih.gov/. Acessado em 12/2025.
+2.  **PubChem** - Sucrose (CID 5988). Disponível em: https://pubchem.ncbi.nlm.nih.gov/. Acessado em 12/2025.
+3.  **FDA** - *Sweetness Intensity of Sweeteners Compared to Table Sugar*. Disponível em: https://www.fda.gov/. Acessado em 12/2025.
+4.  **Aguayo-Guerrero, J. A., et al.** (2024). Sucralose: From Sweet Success to Metabolic Controversies. *Life*, 14(3), 323.
+5.  **Meng, E. C., et al.** (2023). UCSF ChimeraX: Tools for structure building and analysis. *Protein Science*, 32(11), e4792.
+6.  **Smith, D. G. A., et al.** (2020). Psi4 1.4: Open-Source Software for High-Throughput Quantum Chemistry. *J. Chem. Phys*.
